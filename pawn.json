@@ -1,0 +1,12 @@
+{
+	"user": "RogueDrifter",
+	"repo": "Lights_Event",
+	"entry": "Lights_Event.pwn",
+	"output": "Lights_Event.amx",
+	"dependencies": [
+		"sampctl/samp-stdlib",
+		"RogueDrifter/Tech_Lights",
+		"Southclaws/zcmd",
+		"samp-incognito/samp-streamer-plugin"
+	]
+}
