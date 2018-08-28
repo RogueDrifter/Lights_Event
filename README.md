@@ -42,3 +42,6 @@ sampctl package run
 
 ## Explaination
 Basically use the command and keep moving to 'capture' the lights before they blink and get auto destroyed, it has 3 stages white -> blue -> red
+
+## Updates
+The include still has things to edit (The place to enter from and exit to when the event finishes) will be edited later. You can still change them yourself to your will.
