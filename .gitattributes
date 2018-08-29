@@ -184,6 +184,7 @@ Procfile text
 *.project text
 *.classpath text
 *.prefs
+*.pwn text eol=crlf
 
 ##### Language
 # PAWN
