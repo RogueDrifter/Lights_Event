@@ -5,7 +5,6 @@ Dependancies:
 Tech_lights.inc     (By me)
 ZCMD        (By Zeex)
 Streamer (By Incognito)
-
 */
 
 #include <a_samp>
