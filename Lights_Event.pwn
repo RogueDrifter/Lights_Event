@@ -1,5 +1,5 @@
 /*
-Quick minigame using my own tech lights lib for custom samp controlled lights
+Quick minigame using my own tech lights lib for custom samp controlled lights.
 
 Dependancies: 
 Tech_lights.inc     (By me)
