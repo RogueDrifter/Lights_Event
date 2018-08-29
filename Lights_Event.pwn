@@ -1,5 +1,5 @@
 /*
-Quick minigame using my own tech lights lib for custom samp controlled lights.
+Quick minigame using my own tech lights lib for custom samp controlled lights
 
 Dependancies: 
 Tech_lights.inc     (By me)
@@ -434,7 +434,7 @@ public OnPlayerTriggerLight(playerid, LightID, LightType)
             {
                 BlinkLights(LightID, LightType, 0);
                 RT_EventPlayer[playerid][RT_PlayerPoints] = RT_EventPlayer[playerid][RT_PlayerPoints] + 3;
-                GameTextForPlayer(playerid, "+3 Points!", 1500, 3);
+                GameTextForPlayer(playerid, "+3 Point!", 1500, 3);
             }
         }
     }
