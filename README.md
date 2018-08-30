@@ -10,13 +10,13 @@ Simply install to your project:
 sampctl package install RogueDrifter/Lights_Event
 ```
 
-Include in your code and begin using the library:
-
-```pawn
-#include <Lights_Event>
-```
-
 ## Usage
+
+Build with:
+```pawn
+sampctl package ensure
+sampctl package build
+```
 
 Use command
 ```pawn
