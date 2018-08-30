@@ -40,7 +40,7 @@ sampctl package run
 >
 > 3- Tech_Lights https://github.com/RogueDrifter/Tech_Lights
 
-## Explaination
+## Explanation
 Basically use the command and keep moving to 'capture' the lights before they blink and get auto destroyed, it has 3 stages white -> blue -> red
 
 ## Updates
