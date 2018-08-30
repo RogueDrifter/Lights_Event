@@ -19,28 +19,6 @@ Streamer (By Incognito)
 
 #include <Tech_Lights>
 
-//Future updates
-#define LEVER_ZERO_LIGHT 2
-#define LEVER_ONE_LIGHT 1
-#define LEVER_TWO_LIGHT 0
-#define LEVER_THREE_LIGHT 6
-#define LEVER_FOUR_LIGHT 8
-#define LEVER_FIVE_LIGHT 7
-#define LEVER_SIX_LIGHT 3
-#define LEVER_SEVEN_LIGHT 4
-#define LEVER_EIGHT_LIGHT 5
-
-#define LIGHT_ZERO_LEVER 2
-#define LIGHT_ONE_LEVER 1
-#define LIGHT_TWO_LEVER 0
-#define LIGHT_THREE_LEVER 6
-#define LIGHT_FOUR_LEVER 7
-#define LIGHT_FIVE_LEVER 8
-#define LIGHT_SIX_LEVER 3
-#define LIGHT_SEVEN_LEVER 5
-#define LIGHT_EIGHT_LEVER 4
-//End.
-
 #define SECOND_STAGE_INTERVAL 30 //In seconds
 #define THIRD_STAGE_INTERVAL 60//In seconds
 #define END_STAGE_INTERVAL  90//In seconds
@@ -359,55 +337,6 @@ CMD:joinlightsevent(playerid)
     ShowAllLights(0);
     return 1;
 }
-
-//Future updates
-public OnLightGoOff(LightID, LightType)
-{
-    if(RT_EVENT_STATUS)
-    {
-        switch(LightID)
-        {
-            case 0:
-            {
-                
-            }
-            case 1:
-            {
-
-            }
-            case 2:
-            {
-
-            }
-            case 3:
-            {
-
-            }
-            case 4:
-            {
-
-            }
-            case 5:
-            {
-
-            }
-            case 6:
-            {
-
-            }
-            case 7:
-            {
-
-            }
-            case 8:
-            {
-
-            }
-        }
-    }
-    return 1;
-}
-//End.
 
 public OnPlayerTriggerLight(playerid, LightID, LightType)
 {
