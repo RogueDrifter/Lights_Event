@@ -17,7 +17,7 @@ Use command
 
 ## Dependencies
 
-Streamer https://github.com/samp-incognito/samp-streamer-plugin<br/>
+1- Streamer https://github.com/samp-incognito/samp-streamer-plugin<br/>
 
 2- ZCMD https://github.com/Southclaws/zcmd<br/>
 
