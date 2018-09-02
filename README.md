@@ -17,11 +17,11 @@ Use command
 
 ## Dependencies
 
-> 1- Streamer https://github.com/samp-incognito/samp-streamer-plugin
->
-> 2- ZCMD https://github.com/Southclaws/zcmd
->
-> 3- Tech_Lights https://github.com/RogueDrifter/Tech_Lights
+Streamer https://github.com/samp-incognito/samp-streamer-plugin<br/>
+
+2- ZCMD https://github.com/Southclaws/zcmd<br/>
+
+3- Tech_Lights https://github.com/RogueDrifter/Tech_Lights<br/>
 
 ## Explanation
 Basically use the command and keep moving to 'capture' the lights before they blink and get auto destroyed, it has 3 stages white -> blue -> red
