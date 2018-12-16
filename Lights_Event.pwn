@@ -1,7 +1,6 @@
 /*
 Quick minigame using my own tech lights lib for custom samp controlled lights.
-
-Dependancies: 
+Dependancies:
 Tech_lights.inc	 (By me)
 ZCMD		(By Zeex)
 Streamer (By Incognito)
@@ -25,7 +24,7 @@ Streamer (By Incognito)
 #define RT_EVENT_BLINKER_INTERVAL 3//In seconds
 
 #define RT_X_OUT 0.0
-#define RT_Y_OUT 0.0 
+#define RT_Y_OUT 0.0
 #define RT_Z_OUT 10.0
 #define RT_EVENT_CASH 350
 
@@ -42,7 +41,7 @@ enum TECH_LIGHTS_EVENT_PLAYER
 	RT_PlayerStage
 }
 
-new 
+new
 	RT_EventPlayer[MAX_PLAYERS][TECH_LIGHTS_EVENT_PLAYER],
 	Levers[MAX_RTLIGHTS], Boundaries[MAX_BOUNDARIES],
 	bool:RT_EVENT_STATUS
@@ -64,7 +63,7 @@ static CreateStageOne()
 }
 
 static CreateStageTwo()
-{ 
+{
 	//Lights type 2
 	CreateLights(2, 0, 293.91925, 1750.07861, 469.40671,   91.00000, 0.00000, 0.00000);
 	CreateLights(2, 1, 293.39740, 1746.07971, 469.40671,   91.00000, 0.00000, 0.00000);
@@ -127,8 +126,8 @@ static EndEvent(playerid)
 
 static MovePlayerNextStage(playerid)
 {
-	if(RT_EventPlayer[playerid][RT_PlayerStage] == 1) KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage] - 1, 0), ShowAllLights(RT_EventPlayer[playerid][RT_PlayerStage] - 1);
-	else if(RT_EventPlayer[playerid][RT_PlayerStage] == 2) KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage], 0), ShowAllLights(RT_EventPlayer[playerid][RT_PlayerStage]);
+	if(RT_EventPlayer[playerid][RT_PlayerStage] == 1) KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage] - 1, false), ShowAllLights(RT_EventPlayer[playerid][RT_PlayerStage] - 1);
+	else if(RT_EventPlayer[playerid][RT_PlayerStage] == 2) KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage], false), ShowAllLights(RT_EventPlayer[playerid][RT_PlayerStage]);
 	if(RT_EventPlayer[playerid][RT_PlayerStage] <= 2) RT_EventPlayer[playerid][RT_PlayerStage]++;
 
 	switch(RT_EventPlayer[playerid][RT_PlayerStage])
@@ -136,14 +135,14 @@ static MovePlayerNextStage(playerid)
 		case 2:
 		{
 			CreateStageTwo();
-			KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage], 1);
+			KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage], true);
 			ShowAllLights(RT_EventPlayer[playerid][RT_PlayerStage]);
 		}
 
 		case 3:
 		{
 			CreateStageThree();
-			KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage] - 2, 1);
+			KeepAllLightsOn(RT_EventPlayer[playerid][RT_PlayerStage] - 2, true);
 			ShowAllLights(RT_EventPlayer[playerid][RT_PlayerStage] - 2);
 		}
 	}
@@ -317,7 +316,7 @@ public RT_BlinkLights(playerid)
 CMD:joinlightsevent(playerid)
 {
 	if(RT_EVENT_STATUS) return SendClientMessage(playerid, -1, "RT_EVENT: The event is currently running, can't start another one.");
-	
+
 	SetPlayerTime(playerid, 0, 0);
 	SetPlayerWeather(playerid, 5);
 	SetPlayerPos(playerid, 289.41461, 1745.21643, 473.06631);
@@ -331,9 +330,9 @@ CMD:joinlightsevent(playerid)
 	RT_EVENT_STATUS = true;
 	RT_EventPlayer[playerid][RT_EventIn] = true;
 	RT_EventPlayer[playerid][RT_PlayerStage] = 1;
-	
+
 	CreateStageOne();
-	KeepAllLightsOn(0, 1);
+	KeepAllLightsOn(0, true);
 	ShowAllLights(0);
 	return 1;
 }
@@ -342,25 +341,25 @@ public OnPlayerTriggerLight(playerid, LightID, LightType)
 {
 	if(RT_EventPlayer[playerid][RT_EventIn] && IsLightBlinking(LightID, LightType))
 	{
-		BlinkLights(LightID, LightType, 0);
+		BlinkLights(LightID, LightType, false);
 		ShowLights(LightID, LightType);
 		switch(RT_EventPlayer[playerid][RT_PlayerStage])
 		{
 			case 1:
 			{
-				BlinkLights(LightID, LightType, 0);
+				BlinkLights(LightID, LightType, false);
 				RT_EventPlayer[playerid][RT_PlayerPoints]++;
 				GameTextForPlayer(playerid, "+1 Point!", 1500, 3);
 			}
 			case 2:
 			{
-				BlinkLights(LightID, LightType, 0);
+				BlinkLights(LightID, LightType, false);
 				RT_EventPlayer[playerid][RT_PlayerPoints] = RT_EventPlayer[playerid][RT_PlayerPoints] + 2;
 				GameTextForPlayer(playerid, "+2 Points!", 1500, 3);
 			}
 			case 3:
 			{
-				BlinkLights(LightID, LightType, 0);
+				BlinkLights(LightID, LightType, false);
 				RT_EventPlayer[playerid][RT_PlayerPoints] = RT_EventPlayer[playerid][RT_PlayerPoints] + 3;
 				GameTextForPlayer(playerid, "+3 Point!", 1500, 3);
 			}
